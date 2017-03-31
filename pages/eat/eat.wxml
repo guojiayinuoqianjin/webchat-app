@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="usermotto">
+    <text class="user-motto">吃喝内容列表</text>
+  </view>
+</view>
+

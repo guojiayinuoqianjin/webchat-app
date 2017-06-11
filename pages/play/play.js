@@ -1,26 +1,53 @@
-//index.js
-//获取应用实例
-var app = getApp()
+
 Page({
   data: {
-    motto: '欢迎使用小程序',
-    userInfo: {}
+    items: [],
+    hasMore: true,
+    showLoading: true,
+    start: 0
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  onPullDownRefresh: function () {
+    console.log('onPullDownRefresh', new Date())
+  },
+  scroll: function (e) {
+    //console.log(e)
   },
   onLoad: function () {
-    console.log('onLoad')
+    var that = this;
+    var items=[
+      {
+        "imageUrl":"https://gz.bcebos.com/kejicheng/2017/1496473382004.png",
+        "title":"球动力",
+        "rating":5,
+        "address":"111-115",
+        "telephone":"Coming Soon"
+      },
+      {
+        "imageUrl":"https://gz.bcebos.com/kejicheng/2017/1496755666421.png",
+        "title":"英派斯健身俱乐部",
+        "rating":5,
+        "address":"科研路绿地中央广场",
+        "telephone":" 0512-66800906"
+      }
+    ];
+    that.setData({
+      hasMore:true,
+      items:items
+    });
+
+  },
+  //滑动到底部
+  scrolltolower: function () {
     var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo
-      })
+    functions.getCity(function (city) {
+      functions.fetchFilms.call(that, url, city, that.data.start, pageSize, function (data) { })
+    })
+  },
+  //查看详情
+  viewDetail: function (e) {
+    var ds = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: '../detail/detail?id=' + ds.id + '&title=' + ds.title + '&type=ing'
     })
   }
 })

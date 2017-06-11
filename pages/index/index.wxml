@@ -1,11 +1,21 @@
 <!--index.wxml-->
-<view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view>
+<text class="text-left">印象科技城:</text>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}">
+  <block wx:key="*this" wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="100%"/>
+    </swiper-item>
+  </block>
+</swiper>
 
+<view class="container">
+  <text class="text-left">简介:</text>
+  <text class="text-content">
+    苏州科技城位于苏州西部，濒临太湖，东依大阳山国家森林公园，是苏州市“一核四城”发展定位中的生态科技城的重要组成部分，是苏州高新区行政中心所在地。作为全国首家由科技部、江苏省政府、苏州市政府共建的大型研发创新基地，苏州科技城不断提高自主创新能力、推动新兴产业发展，成为苏州市和苏州高新区科学发展与转型升级的重要一极，先后获批江苏省首批“十大创新型园区”，国家火炬计划医疗器械特色产业基地，中国首个“国家知识产权服务业集聚发展试验区”等。
+  </text>
+</view>
+<view class="container">
+  <text class="text-left">地理位置:</text>
+  <map id="map" longitude="120.422200" latitude="31.336420" scale="14" controls="{{controls}}" bindcontroltap="controltap"
+    markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
+</view>

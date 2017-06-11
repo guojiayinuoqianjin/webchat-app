@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/eat/eat",
     "pages/play/play",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/detail/detail",
+    "pages/about/about"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -14,15 +16,23 @@
    "tabBar": {
     "list": [{
       "pagePath": "pages/index/index",
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home_highlight.png",
       "text": "首页"
     }, {
       "pagePath": "pages/eat/eat",
+      "iconPath": "images/eat.png",
+      "selectedIconPath": "images/eat_highlight.png",
       "text": "吃喝"
     }, {
       "pagePath": "pages/play/play",
+      "iconPath": "images/play.png",
+      "selectedIconPath": "images/play_highlight.png",
       "text": "玩乐"
     }, {
       "pagePath": "pages/profile/profile",
+      "iconPath": "images/setting.png",
+      "selectedIconPath": "images/setting_highlight.png",
       "text": "我的"
     }]
   }

@@ -1,7 +1,48 @@
-<view class="container">
+<scroll-view style="height: 100%;" scroll-y="true" class="page item-list" bindscroll="scroll" bindscrolltolower="scrolltolower">
+    <block wx:key="*this" wx:for-items="{{items}}" wx:for-item="item">
+      <view class="single-item" bindtap="viewDetail" data-id="{{item.id}}" data-title="{{item.title}}">
+        <view class="item-image">
+          <image src="{{item.imageUrl}}"></image>
+        </view>
+        <view class="item-info">
+          <view>
+            <text class="item-title">{{item.title}}</text>
+          </view>
+          <view class="item-rating">
+            <block wx:if="{{item.rating > 0}}">
+              <text class="label">评分：</text>
+              <text class="rating">{{item.rating}}</text>
+            </block>
+            <block wx:else>
+              <text class="label">暂无评分</text>
+            </block>
+          </view>
+          <view class="address">
+            <text class="label">地址：</text>
+            <block>
+              <text class="person">{{item.address}}</text>
+            </block>
+          </view>
+          <view class="casts">
+            <text class="label">电话：</text>
+            <block>
+              <text class="person">{{item.telephone}}</text>
+            </block>
+          </view>
+        </view> 
+      </view>
+    </block>
 
-  <view class="usermotto">
-    <text class="user-motto">玩乐内容列表</text>
-  </view>
-</view>
-
+    <!--<view class="load-more-wrap">
+      <block wx:if="{{hasMore}}">
+        <view class="load-content">
+          <text class="weui-loading"/><text class="loading-text">玩命加载中</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="load-content">
+          <text>没有更多内容了</text>
+        </view>
+      </block>
+    </view>-->
+  </scroll-view>

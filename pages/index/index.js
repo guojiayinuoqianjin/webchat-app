@@ -13,18 +13,40 @@ Page({
       width: 50,
       height: 50,
     }],
-    controls:[],
-    polyline:[],
+    controls: [],
+    polyline: [],
 
 
     imgUrls: [
-      'https://gz.bcebos.com/kejicheng/2017/1496755294486.jpg',
-      'https://gz.bcebos.com/kejicheng/2017/1496755296067.jpg',
-      'https://gz.bcebos.com/kejicheng/2017/1496755296552.jpg'
     ],
     indicatorDots: true,
     autoplay: false,
-    duration:500
+    duration: 500
+  },
+  onLoad(options) {
+    this.fetchImageList();
+
+  },
+  // 获取首页gallery图片列表
+  fetchImageList() {
+    let that = this;
+    let tableID = 820;
+    let objects = {
+      tableID,
+      order_by: 'created_at'//升序排列
+    }
+
+    wx.BaaS.getRecordList(objects).then((res) => {
+      var totalLength = res.data.objects.length;
+      // var selectedIndex=Math.round(Math.random()*totalLength);
+      // console.log(selectedIndex);
+
+      that.setData({
+        imgUrls: res.data.objects[totalLength - 1].image_paths
+      })
+    }, (err) => {
+      console.dir(err)
+    });
   }
-  
+
 })

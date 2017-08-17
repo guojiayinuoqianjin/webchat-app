@@ -1,9 +1,9 @@
 <!--index.wxml-->
 <text class="text-left">科技城风景:</text>
-<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}">
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}" indicator-active-color="#cc3300">
   <block wx:key="*this" wx:for="{{imgUrls}}">
     <swiper-item>
-      <image src="{{item}}" class="slide-image" width="100%"/>
+      <image src="{{item}}" class="slide-image" width="100%" />
     </swiper-item>
   </block>
 </swiper>

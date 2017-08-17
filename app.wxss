@@ -113,3 +113,76 @@
 .slide-image{
   width: 100%;
 }
+
+
+/**app.wxss**/
+@import 'style/weui.wxss';
+@import 'wxParser/index.wxss'
+@import 'content.wxss'
+page {
+  box-sizing: border-box;
+  font-size: 30rpx;
+  width: 100%;
+  height: 100%;
+}
+
+view,
+input {
+  box-sizing: border-box;
+}
+
+
+
+
+.index-profile__img {
+  border-radius: 50%;
+  width: 200rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+
+
+page{
+    background-color: #F8F8F8;
+    font-size: 16px;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+.page__hd {
+    padding: 0px;
+}
+.page__bd {
+    padding-bottom: 40px;
+}
+.page__bd_spacing {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.page__ft{
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.page__title {
+    
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.page__desc {
+    margin-top: 5px;
+    color: #888888;
+    text-align: center;
+    font-size: 14px;
+}
+
+/*组件样式*/
+swiper{
+    height:240px;
+    text-align:center;
+}

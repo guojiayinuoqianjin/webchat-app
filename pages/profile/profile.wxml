@@ -1,9 +1,9 @@
 <view class="page">
-  <view bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  <view class="page__hd">
+    <view class="index-profile">
+      <view class="index-profile__img" style="background-image: url('{{profile.avatarUrl}}')"></view>
+    </view>
   </view>
-
   <view class="page__bd">
     <view class="weui-cells weui-cells_after-title">
       <!--<navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
@@ -15,7 +15,10 @@
         <view class="weui-cell__bd">我的点评</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
       </navigator>-->
-
+      <navigator url="/pages/feedback/feedback" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">意见反馈</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
       <navigator url="/pages/about/about" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__bd">关于我们</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>

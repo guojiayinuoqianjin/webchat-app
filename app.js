@@ -1,30 +1,62 @@
 //app.js
 App({
   onLaunch: function () {
-    //调用API从本地缓存中获取数据
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-  },
-  getUserInfo:function(cb){
-    var that = this
-    if(this.globalData.userInfo){
-      typeof cb == "function" && cb(this.globalData.userInfo)
-    }else{
-      //调用登录接口
-      wx.login({
-        success: function () {
-          wx.getUserInfo({
-            success: function (res) {
-              that.globalData.userInfo = res.userInfo
-              typeof cb == "function" && cb(that.globalData.userInfo)
-            }
-          })
+    let that = this
+
+    wx.getSystemInfo({
+      complete(res) {
+        if (res.errMsg == 'getSystemInfo:ok') {
+          let systemInfo = {
+            model: res.model,
+            language: res.language,
+            version: res.version,
+            system: res.system,
+            wH: res.windowHeight,
+            wW: res.windowWidth
+          }
+          that.systemInfo = systemInfo
         }
-      })
+
+      }
+    })
+
+    // 引入 BaaS SDK
+    require('./utils/sdk-v1.0.9.js')
+
+    // 从 BaaS 后台获取 ClientID
+    let clientId = '585cd715dee038d4a498'
+
+
+
+    let userId = this.getUserId();
+    wx.BaaS.init(clientId)
+    if (!userId) {
+      wx.BaaS.login()
+        .then(res => {
+          console.log('BaaS is logined!')
+        }).catch(err => {
+          console.dir(err)
+        })
     }
+    
   },
-  globalData:{
-    userInfo:null
+
+  getUserId() {
+    if (this.userId) {
+      return this.userId
+    }
+
+    this.userId = wx.BaaS.storage.get('uid')
+    return this.userId
+  },
+
+  getUserInfo() {
+
+    if (this.userInfo) {
+      return this.userInfo
+    }
+
+    this.userInfo = wx.BaaS.storage.get('userinfo')
+    return this.userInfo
   }
 })

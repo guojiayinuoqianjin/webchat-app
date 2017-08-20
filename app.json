@@ -6,7 +6,8 @@
     "pages/profile/profile",
     "pages/detail/detail",
     "pages/about/about",
-    "pages/feedback/feedback"
+    "pages/feedback/feedback",
+    "pages/upload/upload"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -35,6 +36,7 @@
       "iconPath": "images/setting.png",
       "selectedIconPath": "images/setting_highlight.png",
       "text": "更多"
-    }]
+    }
+    ]
   }
 }

@@ -1,23 +1,27 @@
-@import 'style/weui.wxss';
+/**app.wxss**/
 
-.page{
+@import 'style/weui.wxss';
+@import 'wxParser/index.wxss';
+page {
     background-color: #F8F8F8;
-    font-size: 16px;
-    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
-    color: #666;
+    font-size: 1em;
+    font-family: Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
+
 .page__hd {
     padding: 40px;
 }
+
 .page__bd {
     padding-bottom: 40px;
 }
+
 .page__bd_spacing {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-.page__ft{
+.page__ft {
     padding-bottom: 10px;
     text-align: center;
 }
@@ -35,140 +39,132 @@
     font-size: 14px;
 }
 
+
 /**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20rpx 0;
-  box-sizing: border-box;
-} 
+
+
+
 /**公共样式**/
-.single-item{
-  padding: 10px;
-  display: flex;
-}
-.item-image{
-  width: 128px;
-}
-.item-image image{
-  width: 100%;
-  height: 180px;
-}
-.item-info{
-  padding-left: 10px;
-  flex: 1;
-}
-.item-info view{
-  margin-bottom: 10px;
-}
-.item-info .label{
-  margin-right: 5px;
-  color: #666;
-}
-.item-info .rating{
-  color: #e09015;
-}
-.item-title{
- font-size: 18px;
- margin-right: 10px;
-}
-.item-year{
-  font-size: 16px;
-  color: #999;
-}
-.person{
-  margin-right: 5px;
-}
-.load-more-wrap{
-  text-align: center;
-  padding: 10px 20px 20px 20px;
-}
-.load-content{
-  padding: 5px;
-  color: #666;
-}
-.btn-load-more text{
-  display: block;
-  padding: 5px;
-  border-radius: 3px;
-  background: #e6e6e6;
-  color: #666;
-  text-align: center;
+
+.single-item {
+    padding: 10px;
+    display: flex;
 }
 
-.text-left{
-  width: 100%;
-  text-align: left;
-}
-.text-center{
-  width: 100%;
-  text-align: center;
-}
-.text-content{
-  padding: 10rpx;
-}
-.slide-image{
-  width: 100%;
+.item-image {
+    width: 128px;
 }
 
-
-/**app.wxss**/
-@import 'style/weui.wxss';
-@import 'wxParser/index.wxss'
-@import 'content.wxss'
-page {
-  box-sizing: border-box;
-  font-size: 30rpx;
-  width: 100%;
-  height: 100%;
+.item-image image {
+    width: 100%;
+    height: 180px;
 }
+
+.item-info {
+    padding-left: 10px;
+    flex: 1;
+}
+
+.item-info view {
+    margin-bottom: 10px;
+}
+
+.item-info .label {
+    margin-right: 5px;
+    color: #666;
+}
+
+.item-info .rating {
+    color: #e09015;
+}
+
+.item-title {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.item-year {
+    font-size: 16px;
+    color: #999;
+}
+
+.person {
+    margin-right: 5px;
+}
+
+.load-more-wrap {
+    text-align: center;
+    padding: 10px 20px 20px 20px;
+}
+
+.load-content {
+    padding: 5px;
+    color: #666;
+}
+
+.btn-load-more text {
+    display: block;
+    padding: 5px;
+    border-radius: 3px;
+    background: #e6e6e6;
+    color: #666;
+    text-align: center;
+}
+
+.text-left {
+    width: 100%;
+    text-align: left;
+}
+
+.text-center {
+    width: 100%;
+    text-align: center;
+}
+
+.text-content {
+    padding: 10rpx;
+}
+
+.slide-image {
+    width: 100%;
+}
+
 
 view,
 input {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
-
-
-
 
 .index-profile__img {
-  border-radius: 50%;
-  width: 200rpx;
-  height: 200rpx;
-  margin: 0 auto;
-  background-repeat: no-repeat;
-  background-size: contain;
+    border-radius: 50%;
+    width: 200rpx;
+    height: 200rpx;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 
 
-
-page{
-    background-color: #F8F8F8;
-    font-size: 16px;
-    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
-}
 .page__hd {
     padding: 0px;
 }
+
 .page__bd {
     padding-bottom: 40px;
 }
+
 .page__bd_spacing {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-.page__ft{
+.page__ft {
     padding-bottom: 10px;
     text-align: center;
 }
 
 .page__title {
-    
     font-size: 20px;
     font-weight: 400;
     text-align: center;
@@ -181,8 +177,25 @@ page{
     font-size: 14px;
 }
 
+
 /*组件样式*/
-swiper{
-    height:240px;
-    text-align:center;
+
+swiper {
+    height: 240px;
+    text-align: center;
+}
+
+.item-list .weui-media-box__hd_in-appmsg {
+    width: 100px;
+    height: 100px;
+}
+
+.item-list .weui-media-box__desc {
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.item-list .weui-media-box__info__meta {
+    font-size: 14px;
+    line-height: 30px;
 }

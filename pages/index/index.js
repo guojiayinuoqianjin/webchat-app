@@ -27,6 +27,34 @@ Page({
     this.fetchImageList();
 
   },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '科技城吃喝玩乐',
+      path: '/pages/index/index',
+      imageUrl:"/images/share.jpg",
+      success: function (res) {
+        wx.showToast({
+          title: '分享成功',
+          icon: 'success',
+          duration: 2000
+        });
+      },
+      fail: function (res) {
+        wx.showToast({
+          title: '分享失败，再次分享',
+          icon: 'success',
+          duration: 2000
+        });
+      },
+      complete:function(res){
+        console.log("用户转发了");
+      }
+    }
+  },
   // 获取首页gallery图片列表
   fetchImageList() {
     let that = this;

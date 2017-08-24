@@ -7,6 +7,33 @@ Page({
     start: 0,
     storeList:[]
   },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '吃喝店铺列表',
+      path: '/pages/eat/eat',
+      success: function (res) {
+        wx.showToast({
+          title: '分享成功',
+          icon: 'success',
+          duration: 2000
+        });
+      },
+      fail: function (res) {
+        wx.showToast({
+          title: '分享失败，再次分享',
+          icon: 'success',
+          duration: 2000
+        });
+      },
+      complete:function(res){
+        console.log("用户转发了");
+      }
+    }
+  },
   onPullDownRefresh: function () {
     console.log('onPullDownRefresh', new Date())
   },
